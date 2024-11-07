@@ -1,0 +1,86 @@
+
+Frontend
+- Flask and Flask SQLAlchemy are excellent choices for the backend, providing a lightweight and flexible framework along with powerful database capabilities. 
+- Flask-Security will help you manage authentication and authorization efficiently
+- Flask session management will handle user sessions effectively.
+- SQLite as your database is a good choice for development and small to medium-sized applications
+
+Backend
+- Vue 3 CLI provides a modern development environment with useful features like hot module replacement and a single-file component system.
+- Bootstrap will help you quickly style your web pages and make them look professional with minimal effort.
+
+Step 1. *
+Plan Your Database Schema: Before diving into coding, spend some time designing your database schema to ensure it meets the requirements of your application.
+
+Step 2.
+Implement Authentication and Authorization: Use Flask-Security to handle user authentication (login, registration, etc.) and authorization (restricting access to certain routes/resources).
+
+step 2.
+Since you're using Flask for the backend, you can easily create RESTful APIs using Flask routes. Design your APIs thoughtfully to provide the necessary endpoints for your frontend to interact with.
+
+Step 4.
+Secure Your Application: Be mindful of security best practices, especially when dealing with user authentication and sensitive data. Use HTTPS for communication and properly sanitize inputs to prevent SQL injection and other vulnerabilities.
+
+Step 5
+Frontend Development: Take advantage of Vue.js's reactivity to create dynamic and responsive user interfaces. Utilize Vue Router for client-side routing and Vuex for state management if your application becomes more complex.
+
+
+Step 1.
+DATABASE
+Flask_SqlAlchemy to create a db
+Models: 
+
+Models Defines
+1. Book: Represents a book in the library with attributes such as title, isbn, and author_id.
+
+2. Author: Represents an author who has written one or more books. It's related to the Book model via a one-to-many relationship.
+
+3. Type: Represents types or categories of books (e.g., Fiction, Mystery, Romance). It's related to the Book model via a many-to-many relationship defined by the book_type_association association table.
+
+4. User: Represents users of the library. It includes attributes like username, password, and email. Each user has a type_id which relates to their user type.
+
+5. UserType: Represents types of users (e.g., Free, Gold, Diamond). Users are related to user types via a many-to-one relationship.
+
+Step 2.
+BACKEND
+- Build a resourse.py file
+- source venv/bin/activate
+
+
+Step 3.
+- Build a resourse.py file
+- from flask_restful import Resource
+- from Db_Models import Book, Author
+
+Build your classes corrosponding to different Resourse endpoints
+Resourse endpoints
+1. Books
+2. BooksByAuthorResource
+
+Redis activation:
+redis-server
+-open new terminal and navigate to the backend
+
+Celery worker and beat initialization
+celery -A user_tasks.celery beat --loglevel=info
+celery -A user_tasks.celery worker --loglevel=info
+-open seprate terminals navigate to the backend 
+
+
+Frontend
+Inside the frontend folder setup a VueCli
+- vue create .
+Vuex for state management and Vue Router for routing
+- npm install vuex vue-router
+- npm run serve
+
+
+Step 4.
+Connecting the front and Backend
+- Install This in the Backend
+- pip install flask-cors
+
+
+
+Building A Basic Login and Registration page
+
